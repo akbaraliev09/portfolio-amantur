@@ -1,0 +1,424 @@
+/* ===== Цвета ===== */
+:root {
+  --red: #d92b2b;
+  --red2: #b81f1f;
+  --bg: #0f1012;
+  --card: #1a1b1e;
+  --line: #2c2e33;
+  --mute: #9a9fa8;
+  --text: #f1f2f4;
+  --header: rgba(15, 16, 18, 0.82);
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f5f6;
+  --card: #ffffff;
+  --line: #e3e5e8;
+  --mute: #6b7078;
+  --text: #17181b;
+  --header: rgba(244, 245, 246, 0.85);
+  color-scheme: light;
+}
+
+/* ===== База ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.6 Manrope, system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Шапка ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--header);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  margin-left: auto;
+  font-size: 14px;
+  color: var(--mute);
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+.tools {
+  display: flex;
+  gap: 6px;
+}
+
+.chip {
+  min-width: 38px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.chip:hover,
+.chip.on {
+  border-color: var(--red);
+}
+
+.chip.on {
+  color: var(--red);
+}
+
+/* ===== Кнопки ===== */
+.btn {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 10px;
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--red2);
+  transform: translateY(-1px);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.btn.ghost:hover {
+  border-color: var(--red);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* ===== Главный блок ===== */
+.hero {
+  padding: 72px 0 56px;
+  background: radial-gradient(circle at 85% 10%, rgba(217, 43, 43, 0.22), transparent 55%);
+}
+
+.hgrid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hello {
+  margin: 0;
+  color: var(--mute);
+}
+
+h1 {
+  margin: 4px 0 6px;
+  font-size: clamp(34px, 6vw, 60px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  margin: 0 0 14px;
+  color: var(--red);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.lead {
+  max-width: 520px;
+  color: var(--mute);
+  font-size: 18px;
+}
+
+.loc {
+  margin-top: 22px;
+  color: var(--mute);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: min(280px, 70vw);
+  aspect-ratio: 1;
+  justify-self: center;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid var(--red);
+  background: var(--card);
+  font-size: 64px;
+  font-weight: 800;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Разделы ===== */
+.section {
+  padding: 56px 0 0;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.sub,
+.muted {
+  color: var(--mute);
+}
+
+.sub {
+  margin: 0 0 24px;
+}
+
+.prose {
+  max-width: 720px;
+  margin-top: 16px;
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.groups.two {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+}
+
+.card.link {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card.link:hover {
+  border-color: var(--red);
+  transform: translateY(-2px);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.item span {
+  color: var(--mute);
+  font-size: 14px;
+}
+
+/* ===== Проекты ===== */
+.plist {
+  display: grid;
+  gap: 24px;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.shot {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  background: linear-gradient(135deg, #26282d, #3a1a1c);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pbody {
+  padding: 24px;
+}
+
+.pbody h3 {
+  font-size: 24px;
+}
+
+.pbody ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--mute);
+  font-size: 14px;
+}
+
+.soon {
+  padding: 28px;
+  border: 2px dashed var(--line);
+  border-radius: 16px;
+  text-align: center;
+  color: var(--mute);
+}
+
+/* ===== Подвал ===== */
+footer {
+  margin-top: 72px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 14px;
+}
+
+/* ===== Телефон ===== */
+@media (max-width: 760px) {
+  .bar {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    padding: 8px 20px;
+  }
+
+  .tools {
+    margin-left: auto;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .hgrid,
+  .project {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar {
+    order: -1;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
