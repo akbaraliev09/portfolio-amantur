@@ -21,7 +21,7 @@ export const projects = [
     id: 'autoparts',
     image: '/images/projects/autoparts.jpg',
     tech: ['React', 'Vite', 'React Router', 'Firebase', 'Firestore', 'REST API', 'Recharts', 'Cloudinary', 'EmailJS', 'Vercel'],
-    live: 'https://autoparts-project-pearl.vercel.app',
+    live: 'https://autoparts-project-q935.vercel.app/',
     code: 'https://github.com/akbaraliev09/autoparts-project',
     ru: {
       title: 'AutoParts KG',
